@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: move source dir
-        run: cd functions
+        run: cd ./functions
       - name: Install Dependencies
         run: npm install
       - name: Build
