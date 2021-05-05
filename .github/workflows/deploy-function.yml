@@ -9,13 +9,14 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    working-directory: ./functions
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
+        working-directory: ./functions
         run: npm install
       - name: Build
+        working-directory: ./functions
         run: npm run build-prod
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
@@ -37,6 +38,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.GCP_SA_KEY }}
