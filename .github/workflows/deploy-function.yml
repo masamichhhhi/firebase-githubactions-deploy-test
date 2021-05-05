@@ -21,4 +21,4 @@ jobs:
           export_default_credentials: true
 
       - name: Deploy Functions
-        run: sh app/deploy/deploy.sh
+        run: firebase deploy
