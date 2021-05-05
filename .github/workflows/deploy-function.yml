@@ -13,10 +13,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: move source Directory
-        run: cd ./functions
-      - name: move source Directory
-        run: ls
       - name: Install Dependencies
         run: npm install
       - name: Build
